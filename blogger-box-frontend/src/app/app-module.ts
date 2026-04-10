@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { TopBar } from './components/top-bar/top-bar';
 import { provideHttpClient } from '@angular/common/http';
+import { PostList } from './components/post-list/post-list';
 
 @NgModule({
-  declarations: [App, TopBar],
+  declarations: [App, TopBar, PostList],
   imports: [BrowserModule, AppRoutingModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],

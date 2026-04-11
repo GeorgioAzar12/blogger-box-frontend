@@ -4,6 +4,7 @@ import { CategoryService } from '../../services/category.service';
 import { PostService } from '../../services/post.service';
 import { Router } from '@angular/router';
 import { Category } from '../../data/category';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-post',
@@ -43,9 +44,24 @@ export class AddPost implements OnInit {
 
   onSubmit() {
     if (this.postForm.invalid) {
+      this.postForm.markAllAsTouched();
+      Swal.fire({
+        position: "top-end",
+        icon: "error",
+        title: "Please review your post",
+        showConfirmButton: false,
+        timer: 1500
+      });
       return;
     }
     this.postService.createPost(this.postForm.value).subscribe(() => {
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Post submitted successfully",
+        showConfirmButton: false,
+        timer: 1500
+      });
       this.router.navigate(['/']);
     });
   }

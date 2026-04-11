@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../environment/environment.prod';
+import { environment } from '../environment/environment';
 import { Category } from '../data/category';
 import { HttpClient } from '@angular/common/http';
 

@@ -7,10 +7,11 @@ import { TopBar } from './components/top-bar/top-bar';
 import { provideHttpClient } from '@angular/common/http';
 import { PostList } from './components/post-list/post-list';
 import { PostListItem } from './components/post-list-item/post-list-item';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [App, TopBar, PostList, PostListItem],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
 })
